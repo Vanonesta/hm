@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, #ff9a9e, #fad0c4, #fbc2eb);
+  font-family: 'Arial', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+}
+
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: red;
+  transform: translate(-50%, -50%) scale(1);
+  animation: beat 1s infinite ease-in-out;
+  clip-path: polygon(50% 0%, 100% 35%, 80% 100%, 50% 85%, 20% 100%, 0% 35%);
+}
+
+@keyframes beat {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.2); }
+}
+
+.text-container h1 {
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 3s forwards;
+}
+
+.fade-in-text {
+  animation: fadeInUp 3s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
